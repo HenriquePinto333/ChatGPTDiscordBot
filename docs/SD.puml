@@ -1,0 +1,27 @@
+@startuml
+
+autonumber
+
+title Sequence diagram of the bot
+
+actor User
+participant "Discord Bot" as discord
+participant "Open AI" as openai
+
+User -> discord: sends message
+activate discord
+
+discord --> discord: verifies if message is a command and is on correct channel
+
+alt message is a command and is on correct channel
+    discord -> openai: sends prompt
+    activate openai
+    openai --> openai: generates response
+    openai --> discord: sends response
+    deactivate openai
+    discord --> User: sends response
+else message is not a command or is not on correct channel
+    discord --> User: does not respond
+end
+
+@enduml

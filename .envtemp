@@ -1,0 +1,4 @@
+DISCORD_TOKEN=
+CHATGPT_API_KEY=
+
+This is just a template of the .env file. You will need to replace the values with your own.

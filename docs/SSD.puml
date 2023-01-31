@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+title System Sequence Diagram
+
+actor User as user
+
+participant "System" as sys
+
+
+activate user
+user --> sys: sends request
+
+
+activate sys
+deactivate user
+
+sys --> sys: generate response
+
+activate user
+
+alt request is in correct channel and is command
+    sys --> user: sends generated response
+else request is not in correct channel or is not command
+    sys --> user: does not respond
+end
+
+deactivate sys
+deactivate user
+
+@enduml

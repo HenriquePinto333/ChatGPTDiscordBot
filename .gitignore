@@ -1,0 +1,4 @@
+# .env files
+*.env
+
+# insert any new files if needed

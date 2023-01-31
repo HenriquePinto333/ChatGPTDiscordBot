@@ -1,0 +1,18 @@
+@startuml
+
+title Bot setup
+
+participant MyClient as client
+participant discordClient as discordCl
+participant discordIntents as discordIn
+
+
+[o--> client**: create a new client
+
+client-> discordIn: intents = discord.Intents.default()
+
+client --> client: intents.message_content = True
+
+client--> discordCl**: new discord client, default intents
+
+@enduml
